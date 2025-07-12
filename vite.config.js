@@ -32,19 +32,15 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        content: "src/main.js", // Build `main.js` as the content script
-        background: "src/background/background.js", // Add `background.js` as another entry point
+        content: "src/main.js",
+        background: "src/background/background.js",
+        youtube: "src/scripts/youtube.js",
       },
       output: {
         entryFileNames: (chunkInfo) => {
-          // Dynamically name files based on their entry point
-          if (chunkInfo.name === "content") {
-            return "main.js"; // Output content script as `main.js`
-          }
-          if (chunkInfo.name === "background") {
-            return "background/background.js"; // Output background script into `background/`
-          }
-          // return '[name].js'; // Default naming for other files
+          if (chunkInfo.name === "content") return "main.js";
+          if (chunkInfo.name === "background") return "background/background.js";
+          if (chunkInfo.name === "youtube") return "scripts/youtube.js";
         },
       },
       commonjsOptions: {
