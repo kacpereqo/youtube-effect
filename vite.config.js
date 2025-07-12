@@ -21,6 +21,10 @@ export default defineConfig({
           src: "manifest.json",
           dest: "",
         },
+        {
+          src: "src/assets/ir.wav",
+          dest: "assets",
+        },
       ],
     }),
   ],

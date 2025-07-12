@@ -19,7 +19,13 @@
       {
     "matches": ["*://*.youtube.com/*"],
     "js": ["scripts/youtube.js"]
-  }
+      }
+   ],
+  "web_accessible_resources": [
+    {
+      "resources": ["assets/ir.wav"],
+      "matches": ["<all_urls>"]
+    }
 
    ]
 }
